@@ -1,0 +1,23 @@
+a {
+    color:#873058;
+    font-size: 24px;
+    font-family: cursive;
+    padding-right: 75px;
+    padding-left: 75px;
+    
+}
+ 
+.nav {
+    text-align: center;
+    background-color:#6382a7;
+    padding-top:20px;
+    padding-bottom:20px;
+
+}
+
+body {
+    margin: 0;
+}
+#grum{
+    color: #89a23b
+}
