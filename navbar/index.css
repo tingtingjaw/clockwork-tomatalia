@@ -23,5 +23,25 @@ body {
 }
 body {
     background-color: #04c3d8;
-  }
+}
+
+#button {
+    color: red;
+    height: 200px;
+    width: 200px;
+}
+
+#exampleImage {
+    width: 400px;
+}
+.box {
+    background-color: #ffffff;
+    height: 200px;
+    width: 200px;
+}
+.solobox {
+    background-color: #ffffff;
+    height: 200px;
+    width: 200px;
+}
   

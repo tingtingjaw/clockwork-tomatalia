@@ -1,51 +1,136 @@
 <!DOCTYPE html>
 <html>
-    <head>
-            <link rel="stylesheet" type="text/css" href="index.css" />
-            <title>navbar</title>
-    </head>
-    <body>
-        <div class="nav">
-            <a href="home.html">home</a>
-            <a href="dog.html">dog</a>
-            <a href="cat.html">cat</a>
-            <a href="shiny.html">shiny</a>
-        </div>
-        <img id="owl" src="http://cdn.audubon.org/cdn/farfuture/_JBQzP8HeEMtKCOe4TMUIQy1Boaj92Fjgslr5WGw2zc/mtime:1486670006/sites/default/files/styles/article_hero_inline/public/web_apa_2013_29007_230153_robertpalmer_great_gray_owl_kk.jpg?itok=sXxftLM_"width="1200" height="800"/>
-        <p id="grum">ppppppppppppp</p>
-        <h1>itchy</h1>
-        <img src="http://www.thisiscolossal.com/wp-content/uploads/2017/07/wave-1.gif"/>
-       <!-- commenting in html --> 
-    </body>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script>
-    $(document).ready(function() {
-        //this code makes the webpage 'ready'
-        // prompt("I'm ready!")
-        //or you can do alert("I'm ready!")
-        // var response = prompt("What is your name backwards?")
-        // console.log(response)
 
-        setInterval(function() {
+<head>
+    <link rel="stylesheet" type="text/css" href="index.css" />
+    <title>navbar</title>
+</head>
+
+<body>
+    <div class="nav">
+        <a href="home.html">home</a>
+        <a href="dog.html">dog</a>
+        <a href="cat.html">cat</a>
+        <a href="shiny.html">shiny</a>
+    </div>
+    <h2 id="sizeValue">400</h2>
+    <input id="create" type="button" value="click me!">
+    <input id="big" type="button" value="bigger">
+    <input id="small" type="button" value="smaller">
+    <input id="trick" type="button" value="try">
+    <!-- <img id="owl" src="http://cdn.audubon.org/cdn/farfuture/_JBQzP8HeEMtKCOe4TMUIQy1Boaj92Fjgslr5WGw2zc/mtime:1486670006/sites/default/files/styles/article_hero_inline/public/web_apa_2013_29007_230153_robertpalmer_great_gray_owl_kk.jpg?itok=sXxftLM_" -->
+        <!-- width="1200" height="800" /> -->
+    <p id="grum">ppppppppppppp</p>
+    <h1>itchy</h1>
+    <img id="exampleImage" src="http://www.thisiscolossal.com/wp-content/uploads/2017/07/wave-1.gif" />
+
+    <div class="box">    
+    </div>
+    <input id="red" type="button" value="red box">
+    <input id="blue" type="button" value="blue box">
+    <input id="green" type="button" value="green box">
+    <input class="randomColor" type="button" value="mystery box">
+
+    <div class="randomColor" class="solobox">
+    </div>
+    <!-- commenting in html -->
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+    var size = 400;
+
+    $(document).ready(function () {
+
+
+
+        setInterval(function () {
             console.log("hi")
         }, 1000)
 
-      /*setInterval(function() {
-        console.log($(body).css("background-color"))
-       $(body.css("background-color", '#'+Math.floor(Math.random()*16777215).toString(16))
-      }, 1000)*/
-        
+        $("#owl").click(function () {
+            alert("whooooooo")//makes an alert when you click on the picture
+            $(this).css("height", "100px")
+            $(this).css("width", "100px")
+        })
+                //Math.floor(1.000001) 1
+        //Math.floor(2.3455345345345345) 2
+        //Math.floor(3.74) 3
 
+        //Math.random() 0-1 0.32423472323487238746
+    
+        //Math.floor(Math.random * 10) 0 - 9
+        //Math.floor(Math.random * 10) + 1 1 - 10
 
-    $("#owl").click(function() {
-        alert("whooooooo")//makes an alert when you click on the picture
-        $(this).css("height", "100px")
-        $(this).css("width", "100px")
+        //setInterval(function() {
+            //will run every second
+        //}, 1000)
+ 
+        $("#red").click(function() {
+            $(".box").css("background-color", "#ff0000")
+        })
 
+        $("#blue").click(function() {
+            $(".box").css("background-color", "#0000ff")
+        })
+
+        $("#green").click(function() {
+            $(".box").css("background-color", "#00ff00")
+        })
+
+        $(".randomColor").click(function(){
+           var myst = Math.floor(Math.random() * 3) + 1;
+            if(myst == 1){
+                $(".box").css("background-color", "#ff0000")
+            }
+            else if(myst == 2){
+                $(".box").css("background-color", "#0000ff")
+            }
+            else{
+                $(".box").css("background-color", "#00ff00")
+            }
+        })
+        setInterval(function() {
+            var tum = Math.floor(Math.random() * 3) + 1;
+            if(tum == 1){
+                $(".solobox").css("background-color", "#ff0000")
+            }
+            else if(tum == 2){
+                $(".solobox").css("background-color", "#0000ff")
+            }
+            else{
+                $(".solobox").css("background-color", "#00ff00")
+            }
+        }, 500)
+
+        $("#create").click(function() {
+            var image = $(document.createElement("img"));
+            image.attr("src", "http://www.thisiscolossal.com/wp-content/uploads/2017/07/wave-1.gif")
+            image.addClass("image")
+            image.css("width", size + "px");
+            $("body").append(image)
+        })
+
+        $("#small").click(function () {
+            size -=10;
+            $("#exampleImage").css("width", size + "px")
+            $("#sizeValue").html(size)
+        })
+
+        $("#big").click(function() {
+            size += 10;
+            $("#exampleImage").css("width", size + "px")
+            $("#sizeValue").html(size)
+        })
+      
+
+        $("#trick").click(function() {
+            $(".image").remove()
+            // size = 400;
+                   // $("#superCool").remove() //deletes stuff
+        })
 
     })
 
-    })
+</script>
 
-    </script>
 </html>
