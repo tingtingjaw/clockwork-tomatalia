@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title> Chatroom </title>
+  <link href="https://fonts.googleapis.com/css?family=Patua+One" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="./index.css"/>
+</head>
+
+<body>
+  <h1 id="heading">It's Chat Time!</h1>
+  <p id="settle"> what's up today </p>
+  <div id="aa">
+    <div class="messages">
+      <div class="text-box left"><p>hi</p></div>
+      <div class="text-box left"><p>h i</p></div>
+      <div class="text-box left"><p>hi</p></div>
+      <div class="text-box right"><p>hello</p></div>
+    </div>
+    <div class="text-area">
+      <input id="message-send" type="text" placeholder="message" />
+    </div>
+  </div>
+</body>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.4/socket.io.js"></script>
+<script>
+var socket = io.connect();
+
+socket.emit("hello", "This is my site")
+</script>
+
+</html>
