@@ -10,24 +10,15 @@
 <body>
   <h1 id="heading">It's Chat Time!</h1>
   <p id="settle"> what's up today </p>
-  <div id="aa">
-    <div class="messages">
-      <div class="text-box left"><p>hi</p></div>
-      <div class="text-box left"><p>h i</p></div>
-      <div class="text-box left"><p>hi</p></div>
-      <div class="text-box right"><p>hello</p></div>
-    </div>
-    <div class="text-area">
-      <input id="message-send" type="text" placeholder="message" />
-    </div>
+  <div id="aa"></div>
+  <div class="text-area">
+    <input id="message-send" type="text" placeholder="message" />
+    <input id="message-button" type="button" value="send" />
   </div>
 </body>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.4/socket.io.js"></script>
-<script>
-var socket = io.connect();
-
-socket.emit("hello", "This is my site")
-</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="./index.js"></script>
 
 </html>

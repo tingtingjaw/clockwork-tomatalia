@@ -17,10 +17,11 @@ body {
 }
 
 #aa {
+  overflow-y: scroll;
   padding-top: 100px;
-  padding-bottom: 500px;
   margin-left: 100px;
   margin-right: 100px;
+  height: 60vh;
   background-color: white;
   position: relative;
 }
@@ -37,14 +38,14 @@ body {
 
 .right {
   margin-right: 75px;
-  background-color: green;
+  background-color: #ab869c;
   float: right;
   margin-left: 70%;
 }
 
 .left {
   margin-left: 75px;
-  background-color: blue;
+  background-color: #9573c8;
   float: left;
   margin-right: 70%;
 }
@@ -56,5 +57,5 @@ body {
 }
 
 #message-send {
-  width: 100%;
+  width: 95%;
 }

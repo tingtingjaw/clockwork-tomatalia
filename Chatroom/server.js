@@ -13,6 +13,12 @@ socket.on("connection", function(socket) {
 
   socket.on("hello", function(data) {
     console.log(data)
+    socket.emit("onReady", "Server is ready!")
+  })
+
+  socket.on("messageSend", function(data) {
+    console.log(data)
+    socket.broadcast.emit("messageReceive", data);
   })
 
 })
